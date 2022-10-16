@@ -6,8 +6,4 @@
 /pkg/
 /spec/reports/
 /tmp/
-/test/
-/sig
-.rubocop.yml
-CHANGELOG.md
 
