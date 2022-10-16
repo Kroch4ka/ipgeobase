@@ -4,6 +4,7 @@ require_relative "ipgeobase/version"
 require "httparty"
 require "happymapper"
 
+# This module allows you to get meta information by ip
 module Ipgeobase
   class Error < StandardError; end
 
