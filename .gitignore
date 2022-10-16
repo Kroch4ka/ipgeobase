@@ -8,6 +8,6 @@
 /tmp/
 /test/
 /sig
-/.rubocop.yml
-/CHANGELOG.md
+.rubocop.yml
+CHANGELOG.md
 
