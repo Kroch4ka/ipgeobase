@@ -7,7 +7,7 @@
 /spec/reports/
 /tmp/
 /test/
-/sig/
-/.rubocop.yml/
-/CHANGELOG.md/
+/sig
+/.rubocop.yml
+/CHANGELOG.md
 

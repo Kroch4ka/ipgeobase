@@ -7,16 +7,12 @@ class TestIpgeobase < Minitest::Test
     refute_nil ::Ipgeobase::VERSION
   end
 
-  def test_parse_fields_to_instance
-    response = HTTParty.get("#{@json_path}#{@test_ip}")
-    instance = HappyMapper.parse(response.body)
-
-    assert { !instance.status.nil? && (instance.status == "success" || instance.status == "fail") }
+  def test_integer_value_in_instance
+    assert { @instance.lon.instance_of? Float }
   end
 
-  def test_lookup
-    instance = Ipgeobase.lookup(@test_ip)
-    assert { instance.status == 'success' && instance.lat == '45.6085' }
+  def test_string_value_in_instance
+    assert { @instance.countryCode == 'CA' }
   end
 
   private
@@ -27,5 +23,6 @@ class TestIpgeobase < Minitest::Test
     @xml_body = File.read("test/fake_body.xml")
     stub_request(:get, "#{@json_path}#{@test_ip}")
       .to_return(body: @xml_body)
+    @instance = Ipgeobase.lookup(@test_ip)
   end
 end
